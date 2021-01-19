@@ -1,0 +1,205 @@
+header nav .bottom-menu .nav-list, header nav .bottom-menu .nav-list ul li.promo a::after, header nav .bottom-menu .nav-searh {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.wrapper {
+  max-width: 1920px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header {
+  height: 150px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #eeeeee;
+}
+
+header .logo {
+  min-width: 230px;
+  height: 100%;
+  background: url("/img/logo.png") no-repeat center;
+}
+
+header nav {
+  width: 90%;
+  border-left: 1px solid #eeeeee;
+  height: 100%;
+}
+
+header nav .top-menu {
+  width: 100%;
+  height: 50px;
+  background-color: #293341;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header nav .top-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  min-width: 40%;
+  color: #646f7f;
+  font-size: 0.9em;
+  padding-right: 20px;
+}
+
+header nav .top-menu ul li:not(:last-child) {
+  padding-right: 40px;
+}
+
+header nav .top-menu ul li a {
+  text-decoration: none;
+  color: #646f7f;
+}
+
+header nav .top-menu ul li:hover a {
+  color: lightgray;
+}
+
+header nav .bottom-menu {
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header nav .bottom-menu .nav-list {
+  width: 93%;
+  height: 100%;
+  border-right: 1px solid #eeeeee;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+header nav .bottom-menu .nav-list ul {
+  min-width: 65%;
+  padding-right: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+header nav .bottom-menu .nav-list ul li.promo a::after {
+  position: absolute;
+  content: '';
+  width: 38px;
+  height: 20px;
+  letter-spacing: normal;
+  font-size: 0.6em;
+  top: -20px;
+  color: #fff;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  left: 100%;
+}
+
+header nav .bottom-menu .nav-list ul li.promo a::before {
+  position: absolute;
+  content: '';
+  width: 10px;
+  height: 10px;
+  left: 100%;
+}
+
+header nav .bottom-menu .nav-list ul li.promo.hot a::after {
+  content: 'HOT';
+  background-color: #c91f28;
+}
+
+header nav .bottom-menu .nav-list ul li.promo.hot a::before {
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, #c91f28), color-stop(50%, transparent));
+  background: linear-gradient(to bottom right, #c91f28 50%, transparent 50%);
+}
+
+header nav .bottom-menu .nav-list ul li.promo.new a::after {
+  content: 'NEW';
+  background-color: green;
+}
+
+header nav .bottom-menu .nav-list ul li.promo.new a::before {
+  background: -webkit-gradient(linear, left top, right bottom, color-stop(50%, green), color-stop(50%, transparent));
+  background: linear-gradient(to bottom right, green 50%, transparent 50%);
+}
+
+header nav .bottom-menu .nav-list ul li {
+  display: inline-block;
+  margin: 0 18px 0 18px;
+  position: relative;
+}
+
+header nav .bottom-menu .nav-list ul li a {
+  font-size: 1em;
+  font-weight: 500;
+  color: #293341;
+  letter-spacing: 2.21px;
+}
+
+header nav .bottom-menu .nav-list ul li.circle {
+  height: 5px;
+  width: 5px;
+  background-color: #293341;
+  border-radius: 50%;
+  opacity: 0.3;
+  -webkit-transform: translateY(10px);
+          transform: translateY(10px);
+}
+
+header nav .bottom-menu .nav-searh {
+  width: 8%;
+  height: 100%;
+  color: #293341;
+  font-size: 1.5em;
+}
+/*# sourceMappingURL=style.css.map */

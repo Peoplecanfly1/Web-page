@@ -1,0 +1,192 @@
+
+//  colors
+ $light-black: #293341;
+ $grey: #7b7b7b;
+ $logo-light-grey: #646f7f;
+ $red: #c91f28;
+$border-color: #eeeeee;
+ 
+ %flex-centered{
+     display:flex;
+     justify-content: center;
+     align-items: center;
+ }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+ }
+
+.wrapper{
+    max-width: 1920px;
+    background-color:#fff;
+    margin: 0 auto;
+} 
+
+a{
+    text-decoration: none;
+}
+
+ul{
+list-style: none;
+}
+
+header{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $border-color;
+
+    .logo{
+        min-width:230px;
+        height: 100%;
+        background:url('/img/logo.png') no-repeat center;
+    }
+
+    nav{
+        width: 90%;
+        border-left: 1px solid $border-color ;
+        height: 100%;
+    
+        .top-menu {
+            width: 100%;
+            height: 50px;
+            background-color:  #293341;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            
+
+            ul{
+                display: flex;
+                list-style: none;
+                justify-content: space-between;
+                min-width: 40%;
+                color: #646f7f;
+                font-size: 0.9em;
+                padding-right: 20px;
+
+                li:not(:last-child){
+                    padding-right: 40px;
+                    
+                }
+                
+                li a{
+                    text-decoration: none;
+                    color: $logo-light-grey;
+                }
+                
+                li:hover a{
+                    color: rgb(211, 211, 211);    
+                }
+
+               
+            }
+        }
+        
+        .bottom-menu{
+            width: 100%;
+            height: 100px;
+            display: flex;
+
+            .nav-list{
+                width: 93%;
+                height: 100%;
+                border-right: 1px solid $border-color;
+                @extend %flex-centered;
+                justify-content: flex-end;
+        
+                
+
+                ul{
+                    min-width: 65%;
+                    padding-right: 30px;
+                    display: flex;
+                    justify-content: flex-end;
+                
+                    // Элементы  NEW и HOT 2 базовых стиля для псевдоэлементов. + 2  меняющие цвет и контент псевдоэлементов.
+                    li.promo  a::after{
+                        position: absolute;
+                        content: '';
+                        width: 38px;
+                        height: 20px;
+                        letter-spacing: normal;
+                        font-size: 0.6em;
+                        top: -20px;  
+                        color: #fff;
+                        @extend %flex-centered;
+                        flex-direction: column;
+                        left: 100%;
+                    }
+
+                     li.promo a::before {
+                         position: absolute;
+                         content: '';
+                         width: 10px;
+                         height: 10px;
+                         left: 100%;
+                     }
+
+
+                    li.promo.hot a::after{
+                        content: 'HOT';
+                        background-color: #c91f28;
+                    }
+                    
+                     li.promo.hot a::before {
+                         background: linear-gradient(to bottom right, #c91f28 50%, transparent 50%);
+                     }
+
+                    li.promo.new a::after{
+                        content: 'NEW';
+                        background-color: green;
+                    }
+
+                    li.promo.new a::before {
+                        background: linear-gradient(to bottom right, green 50%, transparent 50%);
+                    } 
+
+                    li{
+                        display: inline-block;
+                        margin: 0 18px 0 18px;
+                        position: relative;
+                        a {
+                            font-size: 1em;
+                            font-weight: 500;
+                            color: $light-black;
+                            letter-spacing: 2.21px;
+                        }
+                       
+                    
+                    }
+                    li.circle {
+                         height: 5px;
+                         width: 5px;
+                         background-color: $light-black;
+                         border-radius: 50%;
+                         opacity: 0.3;
+                         transform: translateY(10px);
+                    }
+                }       
+               
+
+            }
+            .nav-searh {
+                width: 8%;
+                height: 100%;
+                color: $light-black;
+                font-size: 1.5em; 
+                @extend %flex-centered;
+            }
+        }
+
+
+    }
+
+}

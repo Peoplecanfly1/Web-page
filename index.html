@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce site</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <!-- font-family: 'Montserrat', sans-serif; -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+    <!-- font-family: 'Poppins', sans-serif; -->
+    <link rel="stylesheet" href="./fontawesome-free-5.15.1-web/css/all.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <div class=logo>
+               
+            </div>
+            <nav>
+                <div class="top-menu">
+                    <ul>
+                        <li>
+                            <a href="#"><i class="fas fa-heart"></i> Wishlist  </a>
+                        </li>
+                        <li>
+                            <a href=""><i class="fas fa-map-marker-alt"></i> Track order</li></a>
+                            
+                        <li>
+                            <a href="#"><i class="fas fa-map"></i> Stores location</a>
+                            
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-user"></i> Account
+                            </a>
+                            
+                        </li>
+                        <li>
+                            <a href="">
+                                <i class="fas fa-shopping-cart"></i>
+                                 Your cart
+                            </a> 
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="bottom-menu">
+                    <div class="nav-list">
+                        <ul>
+                        <li class='promo hot' ><a href="">HOME</a></li>
+                        <li class='circle'></li>
+                        <li ><a href="">SHOP</a></li>
+                        <li class='circle'></li>
+                        <li class='promo new' ><a href="">PRODUCTS</a></li>
+                        <li class='circle'></li>
+                        <li class='promo hot'><a href="">MAN</a></li>
+                        <li class='circle'></li>
+                        <li><a href="">WOMEN</a></li>
+                        <li class='circle'></li>
+                        <li><a href="">BUY THEME!</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-searh">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- хлебные крошки и текст -->
+        <article>
+            <h1></h1>
+            <div class='crumbs'>
+                <a href=""></a>
+                <a href=""></a>
+            </div>
+        </article>
+        <!-- Боковое меню фильтров -->
+        <section>
+            <div class="prod-category">
+                <h2>product categories</h2>
+                <ul>
+                    <!-- flex space between -->
+                    <li><a href=""></a> <span></span></li>
+                    <li><a href=""></a> <span></span></li>
+                    <li><a href=""></a> <span></span></li>
+                    <li><a href=""></a> <span></span></li>
+                    <li><a href=""></a> <span></span></li>
+                    <li><a href=""></a> <span></span></li>
+                </ul>
+            </div>
+            <div class="price-filter">
+                <h2>filter by price</h2>
+                <div class="line"></div>
+                <div class="price-range">
+                    <div class="price"></div>
+                    <button class='filter'></button>
+                </div>
+            </div>
+            <div class="color-filter">
+                <h2> filter by color</h2>
+                <ul>
+                    <li><button></button> <span></span></li>
+                    <li><button></button> <span></span></li>
+                    <li><button></button> <span></span></li>
+                    <li><button></button> <span></span></li>
+                    <li><button></button> <span></span></li>
+                    <li><button></button> <span></span></li>
+                </ul>
+            </div>
+            <div class="size-filter">
+                <h2> filter by size</h2>
+                <form action="" method='GET'>
+                <div class='filter-form'> 
+                    <label>
+                        <input type="radio" name='size' value= 'S' checked> S
+                    </label>
+                    <span> (26) </span>
+                </div>
+                <div class='filter-form'> 
+                    <label>
+                        <input type="radio" name='size' value= 'M'> M
+                    </label>
+                    <span> (26) </span>
+                </div>
+                <div class='filter-form'> 
+                    <label>
+                        <input type="radio" name='size' value= 'XL' > XL
+                    </label>
+                    <span> (12) </span>
+                </div>
+                <div class='filter-form'> 
+                    <label>
+                        <input type="radio" name='size' value= 'XXL' > XXL
+                    </label>
+                    <span> (2) </span>
+                </div>
+                
+                </form>
+            </div>
+            <div class="vendor-filter">
+                <h2> filter by vendor</h2>
+                <form action="" method='GET'>
+                <div class='filter-form'> 
+                    <label>
+                        <input type="radio" name='vendor' value= 'Guess' checked> Guess
+                    </label>
+                    <span> (26) </span>
+                </div>
+                <div class='filter-form'> 
+                    <label>
+                        <input type="radio" name='vendor' value= 'Lacoste'> Lacoste
+                    </label>
+                    <span> (26) </span>
+                </div>
+                <div class='filter-form'> 
+                    <label>
+                        <input type="radio" name='vendor' value= 'Levis' > Levi`s
+                    </label>
+                    <span> (12) </span>
+                </div>
+                <div class='filter-form'> 
+                    <label>
+                        <input type="radio" name='vendor' value= 'Zara' disabled > Zara
+                    </label>
+                    <span> (2) </span>
+                </div>
+                
+                </form>
+            </div>
+            <div class='top-rated-products'>
+                <a href="">
+                    <div>
+                        <img src="" alt="" class=mini-img>
+                        <p class="prodcut-name"></p>
+                        <p class="product-price"></p>
+                    </div>
+                </a>
+                <a href="">
+                    <div>
+                        <img src="" alt="" class=mini-img>
+                        <p class="prodcut-name"></p>
+                        <p class="product-price"></p>
+                    </div>
+                </a>
+                <a href="">
+                    <div>
+                        <img src="" alt="" class=mini-img>
+                        <p class="prodcut-name"></p>
+                        <p class="product-price"></p>
+                    </div>
+                </a>
+            </div>
+            <div class="tags">
+                <button class="tag">Bath & body</button>
+                <button class="tag">Beauty</button>
+                <button class="tag">Body Dry</button>
+                <button class="tag">Nature Oil</button>
+                <button class="tag">Organic Makeup</button>
+            </div>
+
+        </section>
+        <!-- Основыные продукты -->
+        <main>
+            <!-- сортировка над товарами -->
+            <div class="sort">
+                <h2>Shop</h2>
+                <div class="sortbar">
+                    <div class="found"></div>
+                    <div class="sort"></div>
+                    <div></div>
+                    <div class='block-view'></div>
+                    <div class='list-view'></div>
+                </div>
+            </div>
+            <!-- основной блок с товарами -->
+            <div class="products">
+                <div class="product">
+                    <a href="">
+                        <img src="" alt="">
+                        <p class='prodcut-name'></p>
+                        <p class='product-price'></p>
+                        <div class='rating'>
+                            <span class='star'></span>
+                            <span class='star-number'></span>
+                        </div>
+                    </a>
+                </div>
+                  <div class="product">
+                    <a href="">
+                        <img src="" alt="">
+                        <p class='prodcut-name'></p>
+                        <p class='product-price'></p>
+                        <div class='rating'>
+                            <span class='star'></span>
+                            <span class='star-number'></span>
+                        </div>
+                    </a>
+                </div>
+                  <div class="product">
+                    <a href="">
+                        <img src="" alt="">
+                        <p class='prodcut-name'></p>
+                        <p class='product-price'></p>
+                        <div class='rating'>
+                            <span class='star'></span>
+                            <span class='star-number'></span>
+                        </div>
+                    </a>
+                </div>
+                  <div class="product">
+                    <a href="">
+                        <img src="" alt="">
+                        <p class='prodcut-name'></p>
+                        <p class='product-price'></p>
+                        <div class='rating'>
+                            <span class='star'></span>
+                            <span class='star-number'></span>
+                        </div>
+                    </a>
+                </div>
+                  <div class="product">
+                    <a href="">
+                        <img src="" alt="">
+                        <p class='prodcut-name'></p>
+                        <p class='product-price'></p>
+                        <div class='rating'>
+                            <span class='star'></span>
+                            <span class='star-number'></span>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+            <!-- нумерация страниц -->
+            <div class="pages-numeration">
+                <ul>
+                    <li><a href="">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">></a></li>
+                </ul>
+            </div>
+        </main>
+        <footer>
+            <div class=company-links>
+                <p> company</p>
+                <a href="">Shop</a>
+                <a href="">About</a>
+                <a href="">Contacts</a>
+                <a href="">Blog</a>
+            </div>
+            <div>
+                <img src="" alt="" class='logo'>
+                <p class='text simple'></p>
+            </div>
+            <div>
+                <p>Help</p>
+                <a href="">Terms</a>
+                <a href="">Privacy</a>
+                <a href="">Returns</a>
+                <a href="">Track Order</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
