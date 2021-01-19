@@ -33,7 +33,7 @@ a{
 }
 
 ul{
-list-style: none;
+    list-style: none;
 }
 
 header{
@@ -189,4 +189,33 @@ header{
 
     }
 
+}
+
+
+article{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 200px;
+    border-bottom: 1px solid $border-color;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        font-family: 'Montserrat',
+        sans-serif;
+        font-size: 1.8rem;
+        font-weight: 500;
+    }
+
+    .crumbs{
+        display: flex;
+
+        *{
+            display: block;
+            padding-left: 5px;
+            color: $grey
+        }
+
+    }
 }
