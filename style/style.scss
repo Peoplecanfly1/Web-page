@@ -1,9 +1,9 @@
 
 //  colors
- $light-black: #293341;
- $grey: #7b7b7b;
- $logo-light-grey: #646f7f;
- $red: #c91f28;
+$light-black: #293341;
+$grey: #7b7b7b;
+$logo-light-grey: #646f7f;
+$red: #c91f28;
 $border-color: #eeeeee;
  
  %flex-centered{
@@ -26,7 +26,10 @@ body {
     max-width: 1920px;
     background-color:#fff;
     margin: 0 auto;
-} 
+    display: flex;
+    flex-wrap: wrap;
+
+}
 
 a{
     text-decoration: none;
@@ -193,13 +196,18 @@ header{
 
 
 article{
-    display: flex;
+    @extend %flex-centered;
     flex-direction: column;
     width: 100%;
-    height: 200px;
+    min-height: 300px;
+    max-height: 300px;
     border-bottom: 1px solid $border-color;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    background: url('/img/back.jpg');
+    background-position: 0 -130px;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    
 
     h1{
         font-family: 'Montserrat',
@@ -219,3 +227,267 @@ article{
 
     }
 }
+
+.product-name{
+        font-size: 1.2em!important;
+        color: $light-black;
+
+}
+
+.product-price{
+    color: $grey;
+}
+
+
+main{
+    width: 100%;
+    display: flex;
+
+    section {
+        display: flex;
+        width: 25%;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #f9f9f9;
+        height: 100%;
+    }
+
+
+    .products-wrapper {
+        width: 75%;
+        display: flex;
+        flex-direction: column;
+        padding: 45px 45px 0 45px;
+
+
+        .sort-body{
+            width: 100%;
+            height: 60px;
+            display: flex;
+            position: relative;
+           
+
+            
+            .block{
+                height: 100%;
+                border: 1px solid $border-color;
+                color: #7b7b7b;
+                font-size: 0.8em;
+                @extend %flex-centered;
+                &:not(:last-child) {
+                    border-right: none;
+                }
+            }
+
+            
+
+            .found{
+                    flex-basis: 15%;
+                    text-align: center;
+            }
+            
+            .sort{
+                    flex-basis: 15%;
+                    min-width: 130px;
+                    position: relative;
+                    
+                   .arrow {
+                            position: absolute;
+                            width: 15px;
+                            height: 15px;
+                            background: linear-gradient(to right bottom, transparent 75%, $grey 75%);
+                            transform: rotate(45deg);
+                            left: 80%;
+                            top: 20%;
+                            
+    
+                    }
+                    
+                    
+                    
+                    select{
+                        appearance: none;
+                        border: none;
+                        cursor: pointer;
+                        color: #7b7b7b;
+                        padding: 20px 52px 20px 52px;
+                        line-height: 20px;
+                        display: block;
+                        font-family: 'Poppins',
+                        sans-serif;
+                        outline: none;
+                        background: transparent;
+                        box-shadow:  none;       
+                    }
+            }
+
+            .empty{
+                    flex-basis: 70%;
+                    flex-shrink: 1;
+            }
+            
+            
+
+            .view{
+                min-width: 70px;
+                @extend %flex-centered;
+                cursor: pointer;
+
+                a, a::after, a::before{
+                    transition: 0.5s all ease;
+                }
+
+                a.view-selector-many{
+                    display: block;
+                    width: 20px;
+                    height: 20px;
+                    background-color: $grey;
+                    position: relative;
+                
+                    &::before{
+                        position: absolute;
+                        content: '';
+                        width: 20px;
+                        height: 1px;
+                        background-color: #fff;
+                        top: 50%
+                    }
+
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        width: 1px;
+                        height: 20px;
+                        background-color: #fff;
+                        right: 48%;
+                    }
+                }
+
+                a.view-selector-single {
+                    position: relative;
+                    display: block;
+                    width: 20px;
+                    height: 2px;
+                    background-color: $grey;
+                
+                
+                    &::before{
+                        position: absolute;
+                        content: '';
+                        width: 100%;
+                        height: 2px;
+                        background-color: $grey;
+                        top: 9px
+                        
+                    }
+                     &::after {
+                         position: absolute;
+                         content: '';
+                         width: 100%;
+                         height: 2px;
+                         background-color: $grey;
+                         bottom: 9px
+                     }
+                }
+                
+              
+            }
+
+            //  Стили для строчного или блочного отображения при наведение. 
+            .view:not(.active):hover a,
+            .view:not(.active):hover a::after,
+            .view:not(.active):hover a::before
+            {
+                 background-color: $red;
+            } 
+
+            .view.active a{
+                background-color: $red!important;
+            }
+
+
+            .list-view {
+                min-width: 70px;
+            }
+
+        }
+
+        .products{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            
+
+            .product{
+                width: 30%;
+                max-height: 800px;
+                margin-top: 20px;
+                display: flex;
+                flex-direction: column;
+
+                
+
+                .image-product-wrapper {
+                    height: 85%;
+                    width: 100%;
+                    overflow: hidden;
+
+                    a {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                        display: flex;
+                       
+        
+                        img {
+                                width: 100%;
+                                min-height: 350px;
+                                overflow: hidden;
+                                
+                        }
+
+                    }
+                
+                }
+
+                .info-image-wrapper {
+                    width: 100%;
+                    height: 15%;
+                    @extend %flex-centered;
+                    flex-direction: column;
+
+                    .rating li{
+                        display: inline-block;
+                    }
+                    .star{
+                        color: #b6b6b6;
+                        font-size: 0.7em;
+                        text-overflow: ellipsis;
+                        
+                    }
+
+                    .fill{
+                        color:#ffbb04;
+                    }
+                    
+                }
+                
+
+            }
+        }
+
+         
+    }
+    
+}
+
+
+footer{
+    width: 100%;
+    display: flex;
+}
+
+
+
+
