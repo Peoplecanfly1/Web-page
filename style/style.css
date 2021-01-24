@@ -245,10 +245,30 @@ article .crumbs * {
 .product-name {
   font-size: 1.2em !important;
   color: #293341;
+  -webkit-transition: 0.3s ease all;
+  transition: 0.3s ease all;
 }
 
 .product-price {
   color: #7b7b7b;
+}
+
+.product-price.sale {
+  position: relative;
+}
+
+.product-price.sale::after {
+  content: '';
+  position: absolute;
+  width: 40%;
+  height: 1px;
+  background-color: #c91f28;
+  top: 50%;
+  left: 60%;
+}
+
+.product-price span {
+  color: #c91f28;
 }
 
 main {

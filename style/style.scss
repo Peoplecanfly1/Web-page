@@ -231,11 +231,30 @@ article{
 .product-name{
         font-size: 1.2em!important;
         color: $light-black;
+        transition: 0.3s ease all;
+
+        &:hover{}
 
 }
 
 .product-price{
     color: $grey;
+    &.sale{
+        position: relative;
+        &::after{
+            content: '';
+            position: absolute;
+            width: 40%;
+            height: 1px;
+            background-color: $red;
+            top: 50%;
+            left: 60%
+        }
+    }
+
+    span{
+        color: $red;
+    }
 }
 
 
