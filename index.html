@@ -81,19 +81,19 @@
         <main>
             <!-- Боковое меню фильтров -->
             <section>
-                <div class="prod-category">
-                    <h2>product categories</h2>
+                <div class="category-selector">
+                    <h2>Product categories</h2>
                     <ul>
                         <!-- flex space between -->
-                        <li><a href=""></a> <span></span></li>
-                        <li><a href=""></a> <span></span></li>
-                        <li><a href=""></a> <span></span></li>
-                        <li><a href=""></a> <span></span></li>
-                        <li><a href=""></a> <span></span></li>
-                        <li><a href=""></a> <span></span></li>
+                        <li><a href="">Accessories</a> <span>(13)</span></li>
+                        <li><a href="">Bags</a> <span>(12)</span></li>
+                        <li><a href="">Jewellery</a> <span>(7)</span></li>
+                        <li><a href="">Man</a> <span>(32)</span></li>
+                        <li><a href="">Other</a> <span>(132)</span></li>
+                        <li><a href="">Shoes</a> <span>(322)</span></li>
                     </ul>
                 </div>
-                <div class="price-filter">
+                <div class="price-selector">
                     <h2>filter by price</h2>
                     <div class="line"></div>
                     <div class="price-range">
@@ -101,7 +101,7 @@
                         <button class='filter'></button>
                     </div>
                 </div>
-                <div class="color-filter">
+                <div class="color-selector">
                     <h2> filter by color</h2>
                     <ul>
                         <li><button></button> <span></span></li>
@@ -112,7 +112,7 @@
                         <li><button></button> <span></span></li>
                     </ul>
                 </div>
-                <div class="size-filter">
+                <div class="size-selector">
                     <h2> filter by size</h2>
                     <form action="" method='GET'>
                     <div class='filter-form'> 
@@ -142,7 +142,7 @@
                     
                     </form>
                 </div>
-                <div class="vendor-filter">
+                <div class="vendor-selector">
                     <h2> filter by vendor</h2>
                     <form action="" method='GET'>
                     <div class='filter-form'> 
@@ -232,10 +232,20 @@
                        <div class="image-product-wrapper">
                            <a href="#">
                                <img src="/img/hmgoepprod (1).jpg" alt="">
-                            </a>
+                           </a>
+                           <!-- выпадающее меню при наведении на картинку -->
+                           <div class="product-hover-menu">
+                                <a class='to-favorite' href="#">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                                <a  class='to-cart'href="#">add to cart</a>
+                                <a class='to-product' href="#">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                </a>
+                           </div>
                        </div>
                        <div class="info-image-wrapper">
-                           <p class="product-name">Collana Multifilo</p>
+                           <a href="#" class='product-name'>Collana Multifilo</a>
                            <p class="product-price">$253</p>
                            <ul class=rating>
                                <li class="star fill">
@@ -252,15 +262,25 @@
                                </li>
                            </ul>
                        </div>
+                       
                     </div>
                     <div class="product">
                        <div class="image-product-wrapper">
                            <a href="#">
                                <img src="/img/hmgoepprod (3).jpg" alt="">
                             </a>
+                            <div class="product-hover-menu">
+                                <a class='to-favorite' href="#">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                                <a  class='to-cart'href="#">add to cart</a>
+                                <a class='to-product' href="#">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                </a>
+                            </div>
                        </div>
                        <div class="info-image-wrapper">
-                           <p class="product-name">The Arley In Wildfire</p>
+                           <a href="#" class='product-name'>Collana Revalo</a>
                            <p class="product-price sale"><span>105$&nbsp&nbsp&nbsp </span>$125</p>
                             <ul class=rating>
                                <li class="star fill">
@@ -283,9 +303,18 @@
                            <a href="#">
                                <img src="/img/hmgoepprod (2).jpg" alt="">
                             </a>
+                            <div class="product-hover-menu">
+                                <a class='to-favorite' href="#">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                                <a  class='to-cart'href="#">add to cart</a>
+                                <a class='to-product' href="#">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                </a>
+                            </div>
                        </div>
                        <div class="info-image-wrapper">
-                           <p class="product-name">Colorful Print</p>
+                          <a href="#" class='product-name'>Collana Teerr</a>
                            <p class="product-price sale"><span>175$&nbsp&nbsp&nbsp </span>$333</p>
                            <ul class=rating>
                                <li class="star fill">
@@ -308,6 +337,15 @@
                            <a href="#">
                                <img src="/img/hmgoepprod (5).jpg" alt="">
                             </a>
+                            <div class="product-hover-menu">
+                                <a class='to-favorite' href="#">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                                <a  class='to-cart'href="#">add to cart</a>
+                                <a class='to-product' href="#">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                </a>
+                            </div>
                        </div>
                        <div class="info-image-wrapper">
                            <a href="" class='product-name'>Super Gik</a>   
@@ -332,11 +370,21 @@
                        <div class="image-product-wrapper">
                            <a href="#">
                                <img src="/img/hmgoepprod (9).jpg" alt="">
+                               
                             </a>
+                            <div class="product-hover-menu">
+                                <a class='to-favorite' href="#">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                                <a  class='to-cart'href="#">add to cart</a>
+                                <a class='to-product' href="#">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                </a>
+                            </div>
                        </div>
                        <div class="info-image-wrapper">
-                           <p class="product-name"></p>
-                           <p class="product-price"></p>
+                           <a href="#" class='product-name'>Repero Multifilo</a>
+                           <p class="product-price">$322</p>
                            <ul class=rating>
                                <li class="star fill">
                                    <i class="fas fa-star"></i></li>
@@ -358,10 +406,19 @@
                            <a href="#">
                                <img src="/img/hmgoepprod (8).jpg" alt="">
                             </a>
+                            <div class="product-hover-menu">
+                                <a class='to-favorite' href="#">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                                <a  class='to-cart'href="#">add to cart</a>
+                                <a class='to-product' href="#">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                </a>
+                            </div>
                        </div>
                        <div class="info-image-wrapper">
-                           <p class="product-name"></p>
-                           <p class="product-price"></p>
+                           <a href="#" class='product-name'>Collana Multifilo</a>
+                           <p class="product-price">$432</p>
                            <ul class=rating>
                                <li class="star fill">
                                    <i class="fas fa-star"></i></li>
@@ -383,11 +440,33 @@
                            <a href="#">
                                <img src="/img/hmgoepprod.jpg" alt="">
                             </a>
+                            <div class="product-hover-menu">
+                                <a class='to-favorite' href="#">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                                <a  class='to-cart'href="#">add to cart</a>
+                                <a class='to-product' href="#">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                </a>
+                            </div>
                        </div>
                        <div class="info-image-wrapper">
-                           <p class="product-name"></p>
-                           <p class="product-price"></p>
-                           <div class="rating"></div>
+                           <a href="#" class='product-name'>Sadano Inforeno</a>
+                           <p class="product-price">$300</p>
+                             <ul class=rating>
+                               <li class="star fill">
+                                   <i class="fas fa-star"></i></li>
+                               <li class="star fill">
+                                   <i class="fas fa-star"></i></li>
+                               </li>
+                               <li class="star fill">
+                                   <i class="fas fa-star"></i></li>
+                               </li>
+                               <li class="star"><i class="fas fa-star"></i></li></li>
+                               <li class="star">
+                                   <i class="fas fa-star"></i></li>
+                               </li>
+                           </ul>
                        </div>
                     </div>
                     <div class="product">
@@ -395,11 +474,33 @@
                            <a href="#">
                                <img src="/img/hmgoepprod (7).jpg" alt="">
                             </a>
+                            <div class="product-hover-menu">
+                                <a class='to-favorite' href="#">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                                <a  class='to-cart'href="#">add to cart</a>
+                                <a class='to-product' href="#">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                </a>
+                            </div>
                        </div>
-                       <div class="info-image-wrapper">
-                           <p class="product-name"></p>
-                           <p class="product-price"></p>
-                           <div class="rating"></div>
+                     <div class="info-image-wrapper">
+                           <a href="#" class='product-name'>Sadano Inforeno</a>
+                           <p class="product-price">$200</p>
+                             <ul class=rating>
+                               <li class="star fill">
+                                   <i class="fas fa-star"></i></li>
+                               <li class="star fill">
+                                   <i class="fas fa-star"></i></li>
+                               </li>
+                               <li class="star fill">
+                                   <i class="fas fa-star"></i></li>
+                               </li>
+                               <li class="star"><i class="fas fa-star"></i></li></li>
+                               <li class="star">
+                                   <i class="fas fa-star"></i></li>
+                               </li>
+                           </ul>
                        </div>
                     </div>
                     <div class="product">
@@ -407,39 +508,60 @@
                            <a href="#">
                                <img src="/img/hmgoepprod (6).jpg" alt="">
                             </a>
+                            <div class="product-hover-menu">
+                                <a class='to-favorite' href="#">
+                                    <i class="far fa-heart"></i>
+                                </a>
+                                <a  class='to-cart'href="#">add to cart</a>
+                                <a class='to-product' href="#">
+                                    <i class="fas fa-arrows-alt-h"></i>
+                                </a>
+                            </div>
                        </div>
                        <div class="info-image-wrapper">
-                           <p class="product-name"></p>
-                           <p class="product-price"></p>
-                           <div class="rating"></div>
+                           <a href="#" class='product-name'>Sadano Inforeno</a>
+                           <p class="product-price">$310</p>
+                             <ul class=rating>
+                               <li class="star fill">
+                                   <i class="fas fa-star"></i></li>
+                               <li class="star fill">
+                                   <i class="fas fa-star"></i></li>
+                               </li>
+                               <li class="star fill">
+                                   <i class="fas fa-star"></i></li>
+                               </li>
+                               <li class="star"><i class="fas fa-star"></i></li></li>
+                               <li class="star">
+                                   <i class="fas fa-star"></i></li>
+                               </li>
+                           </ul>
                        </div>
                     </div>
                     
                 </div>
                 <!-- нумерация страниц -->
-                <div class="pages-numeration">
-                    <ul>
-                        <li><a href="">1</a></li>
-                        <li><a href="">2</a></li>
-                        <li><a href="">3</a></li>
-                        <li><a href="">></a></li>
-                    </ul>
+                <div class="pagination">
+                   <a href="" class="pagination-link pagination-disabled"><i class="fas fa-caret-left"></i></a>
+                   <a href="" class="pagination-link current-page">1</a>
+                   <a href="" class="pagination-link">	&hellip;</a>
+                   <a href="" class="pagination-link">3</a>
+                   <a href="" class="pagination-link"><i class="fas fa-caret-right"></i></a>
                 </div>
             </div>
         </main>
         <footer>
-            <div class=company-links>
+            <div class='company-footer links'>
                 <p> company</p>
                 <a href="">Shop</a>
                 <a href="">About</a>
                 <a href="">Contacts</a>
                 <a href="">Blog</a>
             </div>
-            <div>
-                <img src="" alt="" class='logo'>
-                <p class='text simple'></p>
+            <div class='company-footer info'>
+                <img src="./img/Logo.png" alt="" class='logo'>
+                <p class='text simple'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur mollitia at, illum officiis, assumenda cum recusandae pariatur nisi expedita inventore ab veniam quo dolores molestias accusamus laboriosam optio ex ipsa. Consequatur veritatis libero possimus facilis architecto quibusdam neque asperiores atque!</p>
             </div>
-            <div>
+            <div class='company-footer help'>
                 <p>Help</p>
                 <a href="">Terms</a>
                 <a href="">Privacy</a>

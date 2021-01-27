@@ -31,9 +31,16 @@ body {
 
 }
 
-a{
+a,span{
     text-decoration: none;
+    color: $grey;
+
+    &:not(span):hover{
+        color: $light-black;
+    }
 }
+
+
 
 ul{
     list-style: none;
@@ -194,6 +201,12 @@ header{
 
 }
 
+h2{
+    text-transform: uppercase;
+    color: $light-black;
+    font-size: 1em;
+}
+
 
 article{
     @extend %flex-centered;
@@ -227,13 +240,18 @@ article{
 
     }
 }
-
+// общие стили для многих элементов  в коде, вынесены за рамки наследования.
 .product-name{
         font-size: 1.2em!important;
         color: $light-black;
-        transition: 0.3s ease all;
-
-        &:hover{}
+        transition: 0.5s ease all;
+        display: block;
+        
+        
+        &:hover{
+            transform: translateY(-3px);
+            color: $red;
+        }
 
 }
 
@@ -256,7 +274,7 @@ article{
         color: $red;
     }
 }
-
+// 
 
 main{
     width: 100%;
@@ -266,10 +284,21 @@ main{
         display: flex;
         width: 25%;
         flex-direction: column;
-        justify-content: center;
         background-color: #f9f9f9;
         height: 100%;
+        padding: 2.2% 4%;
+        
+        li{
+            padding: 7px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        & > div{
+            padding-bottom: 40px;
+        }
     }
+    
 
 
     .products-wrapper {
@@ -277,6 +306,8 @@ main{
         display: flex;
         flex-direction: column;
         padding: 45px 45px 0 45px;
+        
+        align-items: center;
 
 
         .sort-body{
@@ -444,19 +475,21 @@ main{
                 margin-top: 20px;
                 display: flex;
                 flex-direction: column;
-
+                position: relative;
                 
-
+                
                 .image-product-wrapper {
                     height: 85%;
                     width: 100%;
-                    overflow: hidden;
+                    position: relative;
+                    transition: 0.5s opacity ease;
 
                     a {
                         width: 100%;
                         height: 100%;
                         object-fit: contain;
                         display: flex;
+                        cursor: inherit;
                        
         
                         img {
@@ -470,6 +503,8 @@ main{
                 
                 }
 
+                
+                // блок  с текстом ценой и рейтингом
                 .info-image-wrapper {
                     width: 100%;
                     height: 15%;
@@ -491,11 +526,120 @@ main{
                     }
                     
                 }
+                // стили меню при наведении на картинку товара
+                .product-hover-menu {
+                    position: absolute;
+                    width: 80%;
+                    height: 10%;
+                    opacity: 0;
+                    bottom: 30%;
+                    right: 50%;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    transition: 0.5s all ease;
                 
+                    a{
+                        color: $logo-light-grey;
+                        @extend %flex-centered;
+                        background-color: white;
+                        
+                    }
+
+                    .to-favorite {
+                        width: 20%;
+                        height: 100%;
+                        border-top-left-radius: 50%;
+                        border-bottom-left-radius: 50%;
+                        border: 1px solid #e0dfdf;
+                        padding-left: 7px;
+                        
+                        i{
+                            cursor: pointer;
+                            font-size: 1.5em;
+                        }
+                    }
+
+                    .to-cart{
+                        width: 60%;
+                        height: 100%;
+                        border-top:  1px solid #e0dfdf;
+                        border-bottom: 1px solid #e0dfdf;
+                        text-transform: uppercase;
+                        color: $red;
+                        font-weight: bold;
+                        cursor: pointer;
+
+                        &:hover{
+                            color: #c91f27c2
+                        }
+                        
+                        
+                    }
+
+                    .to-product{
+                        width: 20%;
+                        height: 100%;
+                        border-top-right-radius: 50%;
+                        border: 1px solid #e0dfdf;
+                        border-bottom-right-radius: 50%;
+
+                         i {
+                             cursor: pointer;
+                             font-size: 1.5em;
+                         }
+                    }
+                }
+                .image-product-wrapper:hover .product-hover-menu {
+                    transform: translateX(50%);
+                    opacity: 1;
+                }
+
+                .image-product-wrapper:hover  img{
+                    opacity: 0.6;
+                }
+
 
             }
         }
 
+        .pagination{
+           height: 50px; 
+           min-width: 250px;
+           @extend %flex-centered;
+           justify-content: space-between;
+           margin: 5vh;
+
+            
+           .pagination-link{
+               min-width: 50px;
+               height: 50px;
+               margin: 10px 10px;
+               color: $light-black;
+               border: 1px solid $border-color;
+               text-align: center;
+               vertical-align: middle;
+               line-height: 50px;
+               transition: 0.5s all ease;
+               
+           }
+
+           .pagination-link:not(.current-page):not(.pagination-disabled):hover{
+               color: #fff;
+               background-color: $light-black;
+           }
+
+           .current-page {
+                background-color: $light-black ;
+                color: #fff;
+           }
+
+           .pagination-disabled i {
+               color: $border-color;
+           }
+           
+           
+        }  
          
     }
     
@@ -505,8 +649,81 @@ main{
 footer{
     width: 100%;
     display: flex;
+    min-height: 290px;
+    border-top: 1px solid $border-color;
+
+    p,
+    a {
+        color: $grey;
+        padding: 1%;
+    }
+
+    a:hover{
+        color: $light-black
+    }
+
+    .company-footer{
+        display: flex;
+        flex-direction: column;
+        border-right: 1px solid $border-color;
+        width: 30%;
+        align-items: flex-end; 
+        padding: 2% 5%;
+
+        p{
+            font-size: 1.5em;
+            font-weight: 600;
+            color: $light-black;
+            text-transform: uppercase;
+        }
+        
+    }
+
+    .info{
+        width: 40%;
+        border-right: 1px solid $border-color;
+        align-items: center;
+        padding: 3% 1% ;
+
+        img{
+            padding-bottom: 20px;
+        }
+
+        .simple{
+            color: $grey;
+            font-size: 1em;
+            text-transform: none;
+            font-weight: lighter;
+        }
+    }
+
+    .help{
+        align-items: flex-start;
+        border: none;
+    }
+    
+
 }
 
+
+// адаптивка 
+@media screen and (max-width: 1300px) {
+     .product {
+         width: 47%!important;
+     }
+
+     li.circle{
+        display: none!important;
+     }
+
+     article{
+         min-height: 250px!important;
+     }
+
+     section {
+         padding: 2.2% 25px!important;
+     }
+ }
 
 
 
