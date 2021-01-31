@@ -56,7 +56,7 @@ header{
     .logo{
         min-width:230px;
         height: 100%;
-        background:url('/img/logo.png') no-repeat center;
+        background:url('../img/Logo.png') no-repeat center;
     }
 
     nav{
@@ -205,6 +205,7 @@ h2{
     text-transform: uppercase;
     color: $light-black;
     font-size: 1em;
+    width: 100%
 }
 
 
@@ -216,7 +217,7 @@ article{
     max-height: 300px;
     border-bottom: 1px solid $border-color;
     overflow: hidden;
-    background: url('/img/back.jpg');
+    background: url(../img/back.jpg);
     background-position: 0 -130px;
     background-repeat: no-repeat;
     background-size: cover; 
@@ -288,19 +289,294 @@ main{
         height: 100%;
         padding: 2.2% 4%;
         
+        // общие стили ко всем элементам списка в боковом меню
         li{
             padding: 7px;
             display: flex;
-            justify-content: space-between;
+            justify-content:space-between;
+            align-items: center;    
         }
 
+        // отстпы между каждыми блоками
         & > div{
             padding-bottom: 40px;
         }
-    }
+        //  общие стили для чекбоксов вне зависиомсти от блока
+        .filter-form {
+            @extend %flex-centered;
+            justify-content: space-between;
+
+            .check{
+                padding-left: 35px;
+                color: $grey;
+
+                &:hover{
+                    color: $light-black;
+                }
+            }
+            
+            .check-input{
+                appearance: none;
+                position: absolute;
+            }
+
+            .check-input:checked +.check-box{
+                background-color: $red;
+                border: none;
+
+                &::before{
+                    opacity: 1;
+                }
+            }
+
+            .check-input:disabled +.check-box{
+                background-color: #bbbbbb;
+                box-shadow: inset 0px 0px 0px 2px #fff;
+            }
+
+            // стили разных статусов делал сам, что-то с  focus  мне ничего не нравится пока закоментил.        
+
+            // .check-input:focus + .check-box {
+            //     box-shadow: 0px 0px 0px 3px tomato ;
+            // }
+
+            .check-box{
+                position: absolute;
+                width: 1.2em;
+                height: 1.2em;
+                border: 1px solid #bbbbbb;
+                border-radius: 50%;
+                margin-left: -27px;
+                margin-top: 3px;
+                transition: 0.3s all;
+                
+                &::before {
+                    position: absolute;
+                    content: '';
+                    background: url(../img/checked.png) 4px 3px no-repeat;
+                    background-size: 12px 12px;
+                    opacity: 0;
+                    width: 30px;
+                    height: 30px;
+                    z-index: 2;
+                }            
+            }
+        }
+
     
+        // ползунок выбора цены. 
+        .price-selector{
 
+            //  кастомный селектор выбора цены.
+            .multi-range-slider{
+                width: 100%;
+                height: 30px;
+                position: relative;
+                margin-top: 30px;
+                .slider{
+                    position: relative;
+                    z-index: 1;
+                    height: 3px;
 
+                    & > .track{
+                       position: absolute;
+                       z-index: 1;
+                       left: 0;
+                       right: 0;
+                       top: 0;
+                       bottom: 0;
+                       border-radius: 5px;
+                       background-color: #eeeeee;
+                    }
+
+                    & > .range{
+                        position: absolute;
+                        z-index: 2;
+                        left: 25%;
+                        right: 25%;
+                        top: 0;
+                        bottom: 0;
+                        border-radius: 5px;
+                        background-color: $red;
+                    }
+
+                    &> .thumb {
+                        position: absolute;
+                        z-index: 3;
+                        width: 3px;
+                        height: 15px;
+                        background-color: $red;
+                        transition: box-shadow .3s ease-in-out;
+                    } 
+                    &> .thumb.left{
+                        left: 25%;
+                        transform: translate(0px, -6px);
+                            }
+                    
+                    &>.thumb.right {
+                        right: 25%;
+                        transform: translate(0, -6px);
+                    }
+                    }    
+                   
+                input[type=range] {
+                    position: absolute;
+                    pointer-events: none;
+                    -webkit-appearance: none;
+                    z-index: 2;
+                    height: 3px;
+                    width: 100%;
+                    opacity: 0;
+                }
+                input[type=range]::-webkit-slider-thumb {
+                    pointer-events: all;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 0;
+                    border: 0 none;
+                    background-color: red;
+                    -webkit-appearance: none;
+                    cursor: pointer;
+                }
+                input[type=range]::-moz-range-thumb {
+                    pointer-events: all;
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 0;
+                    border: 0 none;
+                    background-color: red;
+                    -moz-appearance: none;
+                    cursor: pointer;
+                }
+                }
+            
+            // текст цены 
+            .price-range{
+                @extend %flex-centered;
+                justify-content: space-between;
+            
+
+                .price-range-text>p {
+                    color: $grey;
+                    
+                }
+
+                .value-text {
+                    color: $light-black;
+                    font-weight: 600;
+                }
+
+                .filter-button {
+                    background-color: $light-black;
+                    border: none;
+                    color: #fff;
+                    padding: 1em;
+                    cursor: pointer;
+                    border: 1px solid transparent;
+                    transition: 0.3s ease-in-out;
+
+                    &:hover{
+                        background-color: $light-black;
+                        color: $red;
+                    }
+                }
+            }
+
+        }
+
+        .color-selector{
+            
+                a{
+                    padding-left: 30px;
+                    display: block ;
+                    position: relative;
+                    
+
+                    &::before{
+                        position: absolute;
+                        content: "";
+                        width: 20px;
+                        height: 20px;
+                        border-radius: 50%;
+                        background-color: #fff;
+                        left: 0px;
+                        bottom: 3px; 
+                        transition: 0.3s transform ease-in-out;
+                    }
+
+                    &:hover::before{
+                        transform: scale(1.2);
+                    }
+                }
+
+                a.turquoise::before{
+                    background-color: #27bc9c;
+                }
+                a.emerald::before{
+                    background-color: #36cc73;
+                }
+                a.flower::before {
+                    background-color: #f0c32c;
+                }
+                a.carrot::before {
+                    background-color: #e47d2e;
+                }
+                a.belize::before {
+                    background-color: #2e80b7;
+                }
+                a.alizarin::before {
+                    background-color: #e54a41;
+                }
+        }
+
+        .top-rated-link{
+            width: 100%;
+            @extend %flex-centered;
+            justify-content: flex-start;
+            padding-top: 20px;
+            
+
+            .mini-img{
+                min-width: 100px;
+                max-height: 100px;
+            }
+
+            .top-rated-text{
+                padding-left: 20px;
+            
+
+            & > .product-name{
+                font-size: 1em!important;
+                }
+            }
+
+            
+        }
+        
+        .tags{
+            display: flex;
+            flex-wrap: wrap;
+
+             button.tag {
+                 padding: 1em 1.5em;
+                 margin: 0.5em 0.5em 0.5em 0;
+                 background-color: #fff;
+                 border: 1px solid #eeeeee;
+                 color: $grey;
+                 cursor: pointer;
+                 transition: 0.3s;
+
+             &:hover{
+                 color: $light-black;
+                 border: 1px solid $light-black;
+             }
+
+             }
+        }
+       
+        
+    }
+    // Основной блок с товарами
     .products-wrapper {
         width: 75%;
         display: flex;
@@ -477,7 +753,60 @@ main{
                 flex-direction: column;
                 position: relative;
                 
-                
+                // псево элементы -бирки New Sale.  разные варианты что бы работало когда есть одна бирка или когда есть 2.
+                &.new::after{
+                    position: absolute;
+                    display: block;
+                    content: 'new';
+                    width: 2.2em;
+                    height: 1.5em;
+                    background-color: #27ae60;
+                    color: #fff;
+                    top: 1%;
+                    left: 1%;
+                    font-size: 0.6em;
+                    padding: 3px 5px;
+                }
+                &.sale::after{
+                    position: absolute;
+                    display: block;
+                    content: 'sale';
+                    width: 2.2em;
+                    height: 1.5em;
+                    background-color: $red;
+                    color: #fff;
+                    top: 1%;
+                    left: 1%;
+                    font-size: 0.6em;
+                    padding: 3px 5px;
+                }
+                &.sale.new::after{
+                    position: absolute;
+                    display: block;
+                    content: 'sale';
+                    width: 2.2em;
+                    height: 1.5em;
+                    background-color: $red;
+                    color: #fff;
+                    top: 1%;
+                    left: 1%;
+                    font-size: 0.6em;
+                    padding: 3px 5px;
+                }
+                &.sale.new::before{
+                   position: absolute;
+                   display: block;
+                   content: 'new';
+                   width: 2.2em;
+                   height: 1.5em;
+                   background-color: #27ae60;
+                   color: #fff;
+                   top: 4.5%;
+                   left: 1%;
+                   font-size: 0.6em;
+                   padding: 3px 5px;
+                   z-index: 1;
+                   }
                 .image-product-wrapper {
                     height: 85%;
                     width: 100%;
@@ -502,8 +831,6 @@ main{
                     }
                 
                 }
-
-                
                 // блок  с текстом ценой и рейтингом
                 .info-image-wrapper {
                     width: 100%;
@@ -594,15 +921,11 @@ main{
                     transform: translateX(50%);
                     opacity: 1;
                 }
-
                 .image-product-wrapper:hover  img{
                     opacity: 0.6;
                 }
-
-
             }
         }
-
         .pagination{
            height: 50px; 
            min-width: 250px;
@@ -640,11 +963,8 @@ main{
            
            
         }  
-         
     }
-    
 }
-
 
 footer{
     width: 100%;
@@ -726,4 +1046,96 @@ footer{
  }
 
 
+@media screen and (max-width: 1000px){
+     section {
+         display: none!important;
+     }
+
+     .products-wrapper{
+         min-width: 100%;
+     }
+
+     header{
+         flex-direction: column;
+         min-height: 200px;
+     }
+     nav{
+         width: 100%!important;
+
+         .top-menu{
+             justify-content: center!important;
+         }
+
+         .nav-list{
+             justify-content: center!important;
+             ul{
+                padding-right: 0 !important;
+             }
+             
+         }
+         
+         .nav-searh {
+             width: 12% !important;
+         }
+         
+     }
+
+     footer{
+        justify-content: space-between;
+         
+        .company-footer{
+            width: 50%
+        }
+        .info{
+             display: none;
+         }
+
+      
+     }
+
+}
+
+
+@media screen and (max-width: 695px){
+    article{
+        display: none;
+    }
+
+    .products{
+        justify-content: center!important;
+    }
+
+    .product{
+        width: 80%!important;
+        
+    }
+
+    .found{
+        display: none!important;
+    }
+
+    .top-menu li {
+     padding-right: 1em!important;
+    }
+
+    .top-menu ul{
+       padding-right: 0!important;
+    }
+
+    .nav-list li{
+        margin: 0 0.6em!important;
+    }
+
+    .products-wrapper {
+        padding: 1em 1em 0 1em!important;
+    }
+}
+
+@media screen and (max-width: 490px){
+    header nav .top-menu ul {
+       
+        display: -webkit-box;
+        
+    }
+}
 

@@ -24,18 +24,14 @@
                         <li>
                             <a href="#"><i class="fas fa-heart"></i> Wishlist  </a>
                         </li>
-                        <li>
-                            <a href=""><i class="fas fa-map-marker-alt"></i> Track order</li></a>
-                            
+ 
                         <li>
                             <a href="#"><i class="fas fa-map"></i> Stores location</a>
-                            
                         </li>
                         <li>
                             <a href="#">
                                 <i class="fas fa-user"></i> Account
-                            </a>
-                            
+                            </a>                     
                         </li>
                         <li>
                             <a href="">
@@ -55,11 +51,11 @@
                         <li class='circle'></li>
                         <li class='promo new' ><a href="">PRODUCTS</a></li>
                         <li class='circle'></li>
-                        <li class='promo hot'><a href="">MAN</a></li>
+                        <li class='promo hot'><a href="">BLOG</a></li>
                         <li class='circle'></li>
                         <li><a href="">WOMEN</a></li>
-                        <li class='circle'></li>
-                        <li><a href="">BUY THEME!</a></li>
+                        
+                        
                         </ul>
                     </div>
                     <div class="nav-searh">
@@ -81,6 +77,7 @@
         <main>
             <!-- Боковое меню фильтров -->
             <section>
+                <!-- Основные категории товаров -->
                 <div class="category-selector">
                     <h2>Product categories</h2>
                     <ul>
@@ -93,109 +90,153 @@
                         <li><a href="">Shoes</a> <span>(322)</span></li>
                     </ul>
                 </div>
+                <!--  ползунок выбора цены.  -->
                 <div class="price-selector">
                     <h2>filter by price</h2>
-                    <div class="line"></div>
+                    <div class="multi-range-slider">
+                        <input type="range" id="input-left" min="35" max="655" value="55">
+                        <input type="range" id="input-right" min="35" max="655" value="349">
+                        <div class="slider">
+                            <div class="track"></div>
+                            <div class="range"></div>
+                            <div class="thumb left"></div>
+                            <div class="thumb right"></div>
+		                </div>
+                    </div>
                     <div class="price-range">
-                        <div class="price"></div>
-                        <button class='filter'></button>
+                        <div class="price-range-text">
+                            <p>Price: <span class='value-text' id='low-price'></span> - <span class='value-text' id='high-price'></span></p>
+                        </div>
+                        <button class='filter-button' type="submit">FILTER</button>
                     </div>
                 </div>
+                <!-- Выбор цветов -->
                 <div class="color-selector">
                     <h2> filter by color</h2>
                     <ul>
-                        <li><button></button> <span></span></li>
-                        <li><button></button> <span></span></li>
-                        <li><button></button> <span></span></li>
-                        <li><button></button> <span></span></li>
-                        <li><button></button> <span></span></li>
-                        <li><button></button> <span></span></li>
+                        <li>
+                            <a href="#" class=' turquoise'>Turquoise</a>
+                            <span>(26)</span>
+                        </li>
+                        <li>
+                            <a href="#" class='emerald'>Emerald</a> 
+                            <span>(31)</span>
+                        </li>
+                        <li>
+                            <a href="#" class='flower'>Sun flower</a> 
+                            <span>(31)</span>
+                        </li>
+                        <li>
+                            <a href="#" class='carrot'>Carrot</a> 
+                            <span>(31)</span>
+                        </li>
+                        <li>
+                            <a href="#" class='belize'>Belize</a> 
+                            <span>(31)</span>
+                        </li>
+                        <li>
+                            <a href="#" class='alizarin'>Alizarin</a> 
+                            <span>(31)</span>
+                        </li>
+                        
                     </ul>
                 </div>
+                <!-- Выбор размера -->
                 <div class="size-selector">
                     <h2> filter by size</h2>
                     <form action="" method='GET'>
-                    <div class='filter-form'> 
-                        <label>
-                            <input type="radio" name='size' value= 'S' checked> S
-                        </label>
-                        <span> (26) </span>
-                    </div>
-                    <div class='filter-form'> 
-                        <label>
-                            <input type="radio" name='size' value= 'M'> M
-                        </label>
-                        <span> (26) </span>
-                    </div>
-                    <div class='filter-form'> 
-                        <label>
-                            <input type="radio" name='size' value= 'XL' > XL
-                        </label>
-                        <span> (12) </span>
-                    </div>
-                    <div class='filter-form'> 
-                        <label>
-                            <input type="radio" name='size' value= 'XXL' > XXL
-                        </label>
-                        <span> (2) </span>
-                    </div>
+                        <div class='filter-form'> 
+                            <label class='check'>
+                                <input class='check-input' type="checkbox" name='size' value= 'S' checked>
+                                <span class="check-box"></span> 
+                                S
+                                
+                            </label>
+                            <span> (26) </span>
+                        </div>
+                        <div class='filter-form'> 
+                            <label class='check'>
+                                <input class='check-input' type="checkbox" name='size' value= 'M' disabled>
+                                <span class="check-box"></span> M
+                            </label>
+                            <span> (0) </span>
+                        </div>
+                        <div class='filter-form'> 
+                            <label class='check'>
+                                <input class='check-input' type="checkbox" name='size' value= 'L' >
+                                <span class="check-box"></span> L
+                            </label>
+                            <span> (12) </span>
+                        </div>
+                        <div class='filter-form'> 
+                            <label class='check'>
+                                <input class='check-input' type="checkbox" name='size' value= 'XL'>
+                                <span class="check-box"></span> XL
+                            </label>
+                            <span> (2) </span>
+                        </div>
                     
                     </form>
                 </div>
                 <div class="vendor-selector">
                     <h2> filter by vendor</h2>
-                    <form action="" method='GET'>
-                    <div class='filter-form'> 
-                        <label>
-                            <input type="radio" name='vendor' value= 'Guess' checked> Guess
+                     <div class='filter-form'> 
+                        <label class='check'>
+                            <input class='check-input' type="checkbox" name='size' value= 'zara' checked >
+                            <span class="check-box"></span> ZARA
                         </label>
-                        <span> (26) </span>
-                    </div>
-                    <div class='filter-form'> 
-                        <label>
-                            <input type="radio" name='vendor' value= 'Lacoste'> Lacoste
-                        </label>
-                        <span> (26) </span>
-                    </div>
-                    <div class='filter-form'> 
-                        <label>
-                            <input type="radio" name='vendor' value= 'Levis' > Levi`s
+                        <span> (31) </span>
+                     </div>
+                     <div class='filter-form'> 
+                        <label class='check'>
+                            <input class='check-input' type="checkbox" name='size' value= 'lacoste' checked >
+                            <span class="check-box"></span> Lacoste
                         </label>
                         <span> (12) </span>
-                    </div>
-                    <div class='filter-form'> 
-                        <label>
-                            <input type="radio" name='vendor' value= 'Zara' disabled > Zara
+                     </div>
+                     <div class='filter-form'> 
+                        <label class='check'>
+                            <input class='check-input' type="checkbox" name='size' value= 'levis' >
+                            <span class="check-box"></span> Levi`s
                         </label>
-                        <span> (2) </span>
-                    </div>
-                    
-                    </form>
+                        <span> (12) </span>
+                     </div>
+                     <div class='filter-form'> 
+                        <label class='check'>
+                            <input class='check-input' type="checkbox" name='size' value= 'polo' >
+                            <span class="check-box"></span> Polo
+                        </label>
+                        <span> (12) </span>
+                     </div>
                 </div>
-                <div class='top-rated-products'>
-                    <a href="">
-                        <div>
-                            <img src="" alt="" class=mini-img>
-                            <p class="product-name">Test name</p>
-                            <p class="product-price">$312</p>
-                        </div>
+                     
+                <div>
+                    <h2>Top rated product</h2>
+                    <a href="#" class=top-rated-link>
+                            <img src="img/top.jpg" alt="" class=mini-img>
+                            <div class='top-rated-text'>
+                                <p class="product-name">Slim-fit cotton shirt</p>
+                                <p class="product-price">$312</p>
+                            </div>  
                     </a>
-                    <a href="">
-                        <div>
-                            <img src="" alt="" class=mini-img>
-                            <p class="product-name"></p>
-                            <p class="product-price"></p>
-                        </div>
+                    <a href="#" class=top-rated-link>
+                            <img src="img/top2.jpg" alt="" class=mini-img>
+                            <div class='top-rated-text'>
+                                <p class="product-name">Slim-fit cotton shirt</p>
+                                <p class="product-price">$122</p>
+                            </div>  
                     </a>
-                    <a href="">
-                        <div>
-                            <img src="" alt="" class=mini-img>
-                            <p class="product-name"></p>
-                            <p class="product-price"></p>
-                        </div>
+                    <a href="#" class=top-rated-link>
+                            <img src="img/top.jpg" alt="" class=mini-img>
+                            <div class='top-rated-text'>
+                                <p class="product-name">Slim-fit cotton 
+shirt</p>
+                                <p class="product-price">$232</p>
+                            </div>  
                     </a>
                 </div>
                 <div class="tags">
+                    <h2>Tags</h2>
                     <button class="tag">Bath & body</button>
                     <button class="tag">Beauty</button>
                     <button class="tag">Body Dry</button>
@@ -228,10 +269,10 @@
                 </div>
                 <!-- основной блок с товарами -->
                 <div class="products">
-                    <div class="product">
+                    <div class="product new">
                        <div class="image-product-wrapper">
                            <a href="#">
-                               <img src="/img/hmgoepprod (1).jpg" alt="">
+                               <img src="img/hmgoepprod (1).jpg" alt="">
                            </a>
                            <!-- выпадающее меню при наведении на картинку -->
                            <div class="product-hover-menu">
@@ -264,10 +305,10 @@
                        </div>
                        
                     </div>
-                    <div class="product">
+                    <div class="product sale new ">
                        <div class="image-product-wrapper">
                            <a href="#">
-                               <img src="/img/hmgoepprod (3).jpg" alt="">
+                               <img src="img/hmgoepprod (3).jpg" alt="">
                             </a>
                             <div class="product-hover-menu">
                                 <a class='to-favorite' href="#">
@@ -298,10 +339,10 @@
                            </ul>
                        </div>
                     </div>
-                    <div class="product">
+                    <div class="product new">
                        <div class="image-product-wrapper">
                            <a href="#">
-                               <img src="/img/hmgoepprod (2).jpg" alt="">
+                               <img src="img/hmgoepprod (2).jpg" alt="">
                             </a>
                             <div class="product-hover-menu">
                                 <a class='to-favorite' href="#">
@@ -335,7 +376,7 @@
                     <div class="product">
                        <div class="image-product-wrapper">
                            <a href="#">
-                               <img src="/img/hmgoepprod (5).jpg" alt="">
+                               <img src="img/hmgoepprod (5).jpg" alt="">
                             </a>
                             <div class="product-hover-menu">
                                 <a class='to-favorite' href="#">
@@ -366,10 +407,10 @@
                            </ul>
                        </div>
                     </div>
-                    <div class="product">
+                    <div class="product sale">
                        <div class="image-product-wrapper">
                            <a href="#">
-                               <img src="/img/hmgoepprod (9).jpg" alt="">
+                               <img src="img/hmgoepprod (9).jpg" alt="">
                                
                             </a>
                             <div class="product-hover-menu">
@@ -404,7 +445,7 @@
                     <div class="product">
                        <div class="image-product-wrapper">
                            <a href="#">
-                               <img src="/img/hmgoepprod (8).jpg" alt="">
+                               <img src="img/hmgoepprod (8).jpg" alt="">
                             </a>
                             <div class="product-hover-menu">
                                 <a class='to-favorite' href="#">
@@ -435,10 +476,10 @@
                            </ul>
                        </div>
                     </div>
-                    <div class="product">
+                    <div class="product new">
                        <div class="image-product-wrapper">
                            <a href="#">
-                               <img src="/img/hmgoepprod.jpg" alt="">
+                               <img src="img/hmgoepprod.jpg" alt="">
                             </a>
                             <div class="product-hover-menu">
                                 <a class='to-favorite' href="#">
@@ -472,7 +513,7 @@
                     <div class="product">
                        <div class="image-product-wrapper">
                            <a href="#">
-                               <img src="/img/hmgoepprod (7).jpg" alt="">
+                               <img src="img/hmgoepprod (7).jpg" alt="">
                             </a>
                             <div class="product-hover-menu">
                                 <a class='to-favorite' href="#">
@@ -506,7 +547,7 @@
                     <div class="product">
                        <div class="image-product-wrapper">
                            <a href="#">
-                               <img src="/img/hmgoepprod (6).jpg" alt="">
+                               <img src="img/hmgoepprod (6).jpg" alt="">
                             </a>
                             <div class="product-hover-menu">
                                 <a class='to-favorite' href="#">
@@ -558,7 +599,7 @@
                 <a href="">Blog</a>
             </div>
             <div class='company-footer info'>
-                <img src="./img/Logo.png" alt="" class='logo'>
+                <img src="img/Logo.png" alt="" class='logo'>
                 <p class='text simple'>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tenetur mollitia at, illum officiis, assumenda cum recusandae pariatur nisi expedita inventore ab veniam quo dolores molestias accusamus laboriosam optio ex ipsa. Consequatur veritatis libero possimus facilis architecto quibusdam neque asperiores atque!</p>
             </div>
             <div class='company-footer help'>
@@ -570,5 +611,6 @@
             </div>
         </footer>
     </div>
+    <script src='.//JS/price-slider.js'></script>
 </body>
 </html>
