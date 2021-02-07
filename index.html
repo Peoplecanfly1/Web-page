@@ -247,6 +247,11 @@ shirt</p>
             <!-- Основное меню с товарами -->
             <div class="products-wrapper">
                 <!-- сортировка над товарами -->
+                 <div class='crumbs'>
+                <a href="">Home</a>
+                <p> / </p>
+                <a href="">Shop</a>
+            </div>
                 <div class="sort-body">
                     <div class="block found">
                         14 Products found
@@ -259,7 +264,22 @@ shirt</p>
                         </select>
                         <div class="arrow"></div>
                     </div>
-                    <div class='block empty'></div>
+                    <div class='block empty'>
+                            <p class='hide'>Sorting menu 
+                                <i class="far fa-arrow-alt-circle-left"></i>
+                            </p>
+                            <ul class="hidden-list">
+                                <li>Bags <i class="far fa-arrow-alt-circle-right"></i></li>
+                                <li>Jewellery <i class="far fa-arrow-alt-circle-right"></i></li>
+                                <li>Man <i class="far fa-arrow-alt-circle-right"></i></li>
+                                <li>Woman <i class="far fa-arrow-alt-circle-right"></i></li>
+                                <li>Shoes <i class="far fa-arrow-alt-circle-right"></i></li>
+                                <li>Kid <i class="far fa-arrow-alt-circle-right"></i></li>
+                                
+
+                            </ul>
+                        
+                    </div>
                     <div class='block view active'>
                         <a class='view-selector-many' href=""></a>
                     </div>
@@ -612,5 +632,6 @@ shirt</p>
         </footer>
     </div>
     <script src='.//JS/price-slider.js'></script>
+    <script src=".//JS/main.js"></script>
 </body>
 </html>

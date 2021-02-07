@@ -230,16 +230,7 @@ article{
         font-weight: 500;
     }
 
-    .crumbs{
-        display: flex;
 
-        *{
-            display: block;
-            padding-left: 5px;
-            color: $grey
-        }
-
-    }
 }
 // общие стили для многих элементов  в коде, вынесены за рамки наследования.
 .product-name{
@@ -585,6 +576,18 @@ main{
         
         align-items: center;
 
+         .crumbs {
+             display: flex;
+             align-self: flex-start;
+             padding-bottom: 1em;
+
+             * {
+                 display: block;
+                 padding-left: 5px;
+                 color: $grey
+             }
+
+         }
 
         .sort-body{
             width: 100%;
@@ -604,8 +607,6 @@ main{
                     border-right: none;
                 }
             }
-
-            
 
             .found{
                     flex-basis: 15%;
@@ -647,10 +648,54 @@ main{
                     }
             }
 
+            // блок для мобильной вестки скрытый при большмо разрешении. 
             .empty{
-                    flex-basis: 70%;
-                    flex-shrink: 1;
+                flex-basis: 70%;
+                flex-shrink: 1;
+                position: relative;
+                
+                p{
+                    opacity: 0;
+                    cursor: pointer;
+                }
+
+                 ul.hidden-list{
+                     position: fixed;
+                     height: 100%;
+                     width: 100%;
+                     z-index: -1;
+                     background-color: #f9f9f9;
+                     @extend  %flex-centered;
+                     flex-direction: column;
+                     justify-content: space-evenly;
+                     top: 0;
+                     left: 0;
+                     opacity: 0;
+                     
+                     li{
+                         z-index: 11;
+                         color: $light-black;
+                         text-decoration: underline;
+                         
+
+                     }
+
+                 }
+
+                 ul.hidden-list::after{
+                     position: absolute;
+                     content: 'X';
+                     border: 1px solid $light-black;
+                     padding: 6px 10px;
+                     color: $light-black;
+                     top: 5%;
+                     right: 10%;
+                     
+                 }
+
+
             }
+
             
             
 
@@ -1043,23 +1088,18 @@ footer{
      section {
          padding: 2.2% 25px!important;
      }
- }
-
-
+}
 @media screen and (max-width: 1000px){
-     section {
-         display: none!important;
-     }
+     
+   
 
-     .products-wrapper{
-         min-width: 100%;
-     }
-
-     header{
+    
+    header{
          flex-direction: column;
          min-height: 200px;
      }
-     nav{
+     
+    nav{
          width: 100%!important;
 
          .top-menu{
@@ -1080,7 +1120,7 @@ footer{
          
      }
 
-     footer{
+    footer{
         justify-content: space-between;
          
         .company-footer{
@@ -1094,20 +1134,18 @@ footer{
      }
 
 }
+@media screen and (max-width: 800px) {
 
+    section {
+        display: none !important;
+    }
 
-@media screen and (max-width: 695px){
     article{
         display: none;
     }
 
-    .products{
-        justify-content: center!important;
-    }
-
     .product{
         width: 80%!important;
-        
     }
 
     .found{
@@ -1127,15 +1165,90 @@ footer{
     }
 
     .products-wrapper {
-        padding: 1em 1em 0 1em!important;
+        width: 100%!important;
+        padding: 1em 0 0 0em!important;
+        justify-content: space-between!important;
     }
-}
+    .product{
+        width: 49%!important;
+    }
 
-@media screen and (max-width: 490px){
-    header nav .top-menu ul {
-       
-        display: -webkit-box;
-        
+    .block.view{
+        display: none!important;
     }
+    .block.empty {
+        flex-basis: 100%!important;
+    }
+
+     .empty p {
+         opacity: 1 !important;
+         ;
+     }
+  
+
+}
+@media screen and (max-width: 480px){
+    header nav .top-menu ul {    
+        display: -webkit-box;
+    }
+
+    .products{
+        justify-content: space-around!important;
+    }
+    .product {
+        width: 80%!important;
+    }
+    header nav .top-menu ul li:nth-child(2){
+        display: none;
+    }
+
+    header nav .bottom-menu .nav-list ul li a {
+        font-size: 0.8em;
+    }
+    header nav .bottom-menu{
+        height: 50%;
+    }
+    header{
+        min-height: 150px;
+        .logo{
+            height: 30%;
+        }
+        nav{
+            height: 70%;
+
+            .top-menu {
+                height: 40%;
+            }
+
+            .bottom-menu{
+                height: 60%;
+            }
+
+            li a::before{
+                display: none;
+            }
+
+            li a::after{
+                display: none!important;
+            }
+
+             .nav-list {
+                 margin-left: 2.2em;
+                justify-content: flex-start!important;
+                
+                ul{
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    max-height: 100%;
+                    }
+            }
+
+            .nav-searh{
+                width: 22%!important;
+            }
+        }
+    }
+
+   
 }
 
